@@ -1,0 +1,53 @@
+data:
+  type: image
+  train_dir: ./CelebA/img_align_celeba/
+  test_dir: ./CelebA/img_align_celeba/
+  img_size: 128
+  nlabels: 1
+generator:
+  name: resnet2
+  layers: -4
+  kwargs:
+    nfilter: 64
+    embed_size: 1
+discriminator:
+  name: resnet2
+  layers: 2
+  kwargs:
+    nfilter: 64
+    embed_size: 1
+z_dist:
+  type: gauss
+  dim: 256
+training:
+  out_dir: ./celebA_result
+  gan_type: standard
+  reg_type: real
+  reg_param: 10.
+  batch_size: 16
+  nworkers: 0
+  take_model_average: true
+  model_average_beta: 0.999
+  model_average_reinit: false
+  monitoring: none
+  sample_every: 100
+  sample_nlabels: 10
+  inception_every: -1
+  backup_every: 5000
+  restart_every: -1
+  optimizer: adam
+  lr_g: 0.0001
+  lr_d: 0.0001
+  lr_anneal: 1.
+  lr_anneal_every: 150000
+  d_steps: 1
+  equalize_lr: false
+test:
+  model_file: ./models/
+  batch_size: 16
+  sample_size: 64
+  sample_nrow: 8
+  conditional_samples: 1
+interpolations:
+  nzs: 10
+  nsubsteps: 75
