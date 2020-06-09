@@ -4,7 +4,7 @@ This is a pytorch implementation of the paper
 https://arxiv.org/pdf/2002.11810.pdf
 
 ## Citation
-Please consider citing our papers if you refer to this code in your research.
+Please consider citing our paper if you refer to this code in your research.
 ```
 @inproceedings{zhao2020leveraging,
   title={On Leveraging Pretrained GANs for Limited-Data Generation},
