@@ -23,7 +23,7 @@ GAN_stability: https://github.com/LMescheder/GAN_stability
 # Notes
 `CELEBA_[f]GmDn.py` is the implementation of the model in Figure1(f).
 
-`Flower_[h]our.py` is the implementation of the model in Figure1(h). The performance for this part of the code is shown in "Section 4.1 Comparisons with Existing Methods" of the main paper.
+`Flower_[h]our.py` is the implementation of the model in Figure1(h). This code is for "Section 4.1 Comparisons with Existing Methods".
 
 # Usage
 First, download the pretrained GP-GAN model by running `download_pretrainedGAN.py`. Note please change the path therein.
