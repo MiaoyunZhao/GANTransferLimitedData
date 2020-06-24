@@ -91,8 +91,8 @@ load_dir = './pretrained_model/'
 
 
 DATA = 'Flowers'
-image_path = './data/Flowers/102flowers/passion25/'
-test_path = './data/Flowers/102flowers/passion251/'
+image_path = './data/102flowers/passion25/'
+test_path = './data/102flowers/passion251/'
 
 
 out_path = main_path+'/'+DATA+'_our_contral_kernel_25_v2_16z_10reg/'
