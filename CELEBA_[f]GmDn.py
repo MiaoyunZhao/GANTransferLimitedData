@@ -79,11 +79,11 @@ DATA_FIX = 'ImageNet'
 Num_epoch = 50
 NNN = 10000
 config_path = './configs/celebA.yaml'# you need to change it
-main_path = './code/' # you need to change it
-image_path = "./CelebA/" # you need to change it
-image_test = "./CelebA/" # you need to change it
-out_path = main_path+'/celebA_GmPn/'# you need to change it
-load_dir = './saved_data/' # put the model pretrained on ImageNet here
+main_path = './' # you need to change it
+image_path = "./data/CelebA/" # you need to change it
+image_test = "./data/CelebA/" # you need to change it
+out_path = main_path+'/results_celebA_GmPn/'# you need to change it
+load_dir = './pretrained_model/' # put the model pretrained on ImageNet here
 
 
 for choose in range(3):
