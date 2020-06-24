@@ -26,6 +26,8 @@ Our code is based on GAN_stability: https://github.com/LMescheder/GAN_stability
 
 `Flower_[h]our.py` is the implementation of the model in Figure1(h). This code is for "Section 4.1 Comparisons with Existing Methods".
 
+`Flower_[h]our.py`is the code for the experiments on Flowers-25.
+
 # Usage
 First, download the pretrained GP-GAN model by running `download_pretrainedGAN.py`. Note please change the path therein.
 
