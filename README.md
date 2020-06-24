@@ -35,7 +35,7 @@ For Flowers-25, we choose the first 25 images from the passion category, followi
 ```angular2
 data
 ├──102flowers
-           ├──all8000images
+           ├──all8189images
                       ├──image_folder
            ├──passion25 
                       ├──image_folder
