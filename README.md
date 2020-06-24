@@ -20,8 +20,6 @@ pytorch=1.2.0
 
 
 # Notes
-Our code is based on GAN_stability: https://github.com/LMescheder/GAN_stability
-
 `CELEBA_[f]GmDn.py` is the implementation of the model in Figure1(f).
 
 `Flower_[h]our.py` is the implementation of the model in Figure1(h). This code is for "Section 4.1 Comparisons with Existing Methods".
@@ -35,4 +33,7 @@ Second, download the training data to the folder `./data/`. For example, downloa
 For Flowers-25, we choose the first 25 images from the   category, following 
 
 Finally, run `Flower_[h]our.py` or  `Flowers25_our.py`.
+
+## Acknowledgement
+Our code is based on GAN_stability: https://github.com/LMescheder/GAN_stability from the paper "Which Training Methods for GANs do actually Converge?".
 
