@@ -77,7 +77,7 @@ G_Layer_FIX, D_Layer_FIX: number of layers to fix
 ============================================================================='''
 
 DATA = 'Flowers'
-image_path = './data/102flowers/'
+image_path = './data/102flowers/all8189images/'
 is_control_kernel = True
 
 DATA_FIX = 'ImageNet'
