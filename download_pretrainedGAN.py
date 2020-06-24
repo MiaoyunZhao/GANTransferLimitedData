@@ -30,7 +30,7 @@ elif DATA == 'Bedroom':
 elif DATA == 'Tower':
     config_path = './GAN_stability/configs/pretrained/lsun_tower_pretrained.yaml'
 
-save_dir = './GAN_stability/pretrained/weights/saved_data/'
+save_dir = './pretrained_model/'
 
 no_cuda = 0
 
