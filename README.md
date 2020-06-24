@@ -18,9 +18,10 @@ python=3.7.3
 
 pytorch=1.2.0
 
-GAN_stability: https://github.com/LMescheder/GAN_stability
 
 # Notes
+Our code is based on GAN_stability: https://github.com/LMescheder/GAN_stability
+
 `CELEBA_[f]GmDn.py` is the implementation of the model in Figure1(f).
 
 `Flower_[h]our.py` is the implementation of the model in Figure1(h). This code is for "Section 4.1 Comparisons with Existing Methods".
