@@ -14,10 +14,10 @@ Please consider citing our paper if you refer to this code in your research.
 ```
 
 # Requirement
+```
 python=3.7.3
-
 pytorch=1.2.0
-
+```
 
 # Notes
 `CELEBA_[f]GmDn.py` is the implementation of the model in Figure1(f).
