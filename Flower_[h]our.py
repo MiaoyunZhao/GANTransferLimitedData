@@ -83,8 +83,8 @@ is_control_kernel = True
 DATA_FIX = 'ImageNet'
 Num_epoch = 500 *10000
 
-main_path = './code/'
-load_dir = './saved_data/'
+main_path = './'
+load_dir = './pretrained_model/'
 
 if is_control_kernel:
     out_path = main_path+ DATA + '_our_contral_kernel/'
