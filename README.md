@@ -1,7 +1,5 @@
 # GANTransferLimitedData
-This is a pytorch implementation of the paper 
-"On Leveraging Pretrained GANs for Limited-Data Generation".
-https://arxiv.org/pdf/2002.11810.pdf
+This is a pytorch implementation of the paper [On Leveraging Pretrained GANs for Limited-Data Generation](https://arxiv.org/pdf/2002.11810.pdf).
 
 Please consider citing our paper if you refer to this code in your research.
 ```
