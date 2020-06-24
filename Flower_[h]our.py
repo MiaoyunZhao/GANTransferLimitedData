@@ -94,17 +94,10 @@ else:
 config_path = main_path+'/configs/' +DATA+ '.yaml'
 
 
-for choose in range(3):
+for choose in range(1):
 
-    if choose == 0:
-        G_Layer_FIX = -4
-        D_Layer_FIX = 2
-    elif choose == 1:
-        G_Layer_FIX = -4
-        D_Layer_FIX = 4
-    elif choose == 2:
-        G_Layer_FIX = -4
-        D_Layer_FIX = 6
+    G_Layer_FIX = -4
+    D_Layer_FIX = 2
 
     config = load_config(config_path, 'configs/default.yaml')
 
