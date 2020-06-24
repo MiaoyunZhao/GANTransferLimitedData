@@ -35,5 +35,5 @@ For Flowers-25, we choose the first 25 images from the   category, following
 Finally, run `Flower_[h]our.py` or  `Flowers25_our.py`.
 
 ## Acknowledgement
-Our code is based on GAN_stability: https://github.com/LMescheder/GAN_stability from the paper "Which Training Methods for GANs do actually Converge?".
+Our code is based on GAN_stability: https://github.com/LMescheder/GAN_stability from the paper [Which Training Methods for GANs do actually Converge?](https://avg.is.tuebingen.mpg.de/publications/meschedericml2018).
 
