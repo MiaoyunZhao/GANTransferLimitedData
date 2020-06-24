@@ -1,0 +1,35 @@
+data:
+  type: image
+  train_dir: D:/fix_data/CelebA/img_align_celeba/
+  test_dir: D:/fix_data/CelebA/img_align_celeba/
+  img_size: 256
+generator:
+  name: resnet4
+  kwargs:
+    nfilter: 64
+    embed_size: 1
+discriminator:
+  name: resnet4
+  kwargs:
+    nfilter: 64
+    embed_size: 1
+z_dist:
+  type: gauss
+  dim: 256
+training:
+  out_dir: F:/RUN_CODE_OUT/GAN_stability/pretrained/celebA
+  batch_size: 8
+  nworkers: 0
+  sample_every: 100
+test:
+  model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/gan_stability/models/celeba-ab478c9d.pt
+  batch_size: 8
+  sample_size: 64
+  sample_nrow: 8
+  conditional_samples: 1
+interpolations:
+  nzs: 10
+  nsubsteps: 75
+
+
+##model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/gan_stability/models/celeba-ab478c9d.pt
