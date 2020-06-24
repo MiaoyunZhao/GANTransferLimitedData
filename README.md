@@ -15,11 +15,14 @@ Please consider citing our paper if you refer to this code in your research.
 
 # Requirement
 python=3.7.3
+
 pytorch=1.2.0
+
 GAN_stability: https://github.com/LMescheder/GAN_stability
 
 # Notes
 `CELEBA_[f]GmDn.py` is the implementation of the model in Figure1(f).
+
 `Flower_[h]our.py` is the implementation of the model in Figure1(h).
 
 # Usage
