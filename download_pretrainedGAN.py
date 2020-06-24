@@ -18,17 +18,17 @@ from gan_training.config import (
 DATA = 'ImageNet'
 
 if DATA == 'CELEBA':
-    config_path = './GAN_stability/configs/pretrained/celebA_pretrained.yaml'
+    config_path = './configs/pretrained/celebA_pretrained.yaml'
 elif DATA == 'ImageNet':
-    config_path = './GAN_stability/configs/pretrained/imagenet_pretrained.yaml'
+    config_path = './configs/pretrained/imagenet_pretrained.yaml'
 elif DATA == 'Church':
-    config_path = './GAN_stability/configs/pretrained/lsun_church_pretrained.yaml'
+    config_path = './configs/pretrained/lsun_church_pretrained.yaml'
 elif DATA == 'Bridge':
-    config_path = './GAN_stability/configs/pretrained/lsun_bridge_pretrained.yaml'
+    config_path = './configs/pretrained/lsun_bridge_pretrained.yaml'
 elif DATA == 'Bedroom':
-    config_path = './GAN_stability/configs/pretrained/lsun_bedroom_pretrained.yaml'
+    config_path = './configs/pretrained/lsun_bedroom_pretrained.yaml'
 elif DATA == 'Tower':
-    config_path = './GAN_stability/configs/pretrained/lsun_tower_pretrained.yaml'
+    config_path = './configs/pretrained/lsun_tower_pretrained.yaml'
 
 save_dir = './pretrained_model/'
 
