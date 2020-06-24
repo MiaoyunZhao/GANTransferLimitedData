@@ -87,7 +87,7 @@ Num_epoch = 5000 *10000
 method = 'AdaFM' # scratch
 
 main_path = './'
-load_dir = './pretrained/weights/saved_data/'
+load_dir = './pretrained_model/'
 
 
 DATA = 'Flowers'
@@ -110,6 +110,10 @@ for choose in range(1):
     config['discriminator']['layers'] = D_Layer_FIX
     config['data']['train_dir'] = image_path
     config['data']['test_dir'] = test_path
+    config['z_dist']['dim'] = 4
+    config['training']['reg_type'] = 'real_fake'
+    config['training']['reg_param'] = 20.0
+    config['training']['batch_size'] = 16
 
     config['generator']['name'] = 'resnet2_contral_kernel'
     config['discriminator']['name'] = 'resnet2_contral_kernel'
