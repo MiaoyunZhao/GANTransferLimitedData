@@ -35,8 +35,10 @@ For Flowers-25, we choose the first 25 images from the passion category, followi
 ```angular2
 data
 ├──102flowers
-           ├──folder1
-           ├──folder2
+           ├──all8000images
+                      ├──image_folder
+           ├──passion25 
+                      ├──image_folder
 ├── CelebA
 ...
 ```
