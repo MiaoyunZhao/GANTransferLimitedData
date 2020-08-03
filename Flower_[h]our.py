@@ -87,9 +87,9 @@ main_path = './'
 load_dir = './pretrained_model/'
 
 if is_control_kernel:
-    out_path = main_path+ DATA + '_our_contral_kernel/'
+    out_path = main_path+ DATA + '_our_AdaFM/'
 else:
-    out_path = main_path + DATA + '_not_contral_kernel/'
+    out_path = main_path + DATA + '_not_AdaFM/'
 
 config_path = main_path+'/configs/' +DATA+ '.yaml'
 
@@ -106,8 +106,8 @@ for choose in range(1):
     config['data']['train_dir'] = image_path
     config['data']['test_dir'] = image_path
 
-    config['generator']['name'] = 'resnet2_contral_kernel'
-    config['discriminator']['name'] = 'resnet2_contral_kernel'
+    config['generator']['name'] = 'resnet2_AdaFM'
+    config['discriminator']['name'] = 'resnet2_AdaFM'
 
     config['training']['out_dir'] = out_path + 'G_%d_D_%d/'%(-G_Layer_FIX, D_Layer_FIX)
     if not os.path.isdir(config['training']['out_dir']):
@@ -176,7 +176,7 @@ for choose in range(1):
                 param.requires_grad = True
             else:
                 param.requires_grad = False
-            if name.find('small_style_adain_') >= 0:
+            if name.find('small_adafm_') >= 0:
                 param.requires_grad = False
         get_parameter_number(generator)
         
@@ -309,7 +309,7 @@ for choose in range(1):
             if is_control_kernel:
                 if it == 10000:
                     for name, param in generator.named_parameters():
-                        if name.find('small_style_adain_') >= 0:
+                        if name.find('small_adafm_') >= 0:
                             param.requires_grad = True
                     get_parameter_number(generator)
 
