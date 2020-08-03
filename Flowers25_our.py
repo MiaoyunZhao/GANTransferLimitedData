@@ -115,8 +115,8 @@ for choose in range(1):
     config['training']['reg_param'] = 20.0
     config['training']['batch_size'] = 16
 
-    config['generator']['name'] = 'resnet2_contral_kernel'
-    config['discriminator']['name'] = 'resnet2_contral_kernel'
+    config['generator']['name'] = 'resnet2_AdaFM'
+    config['discriminator']['name'] = 'resnet2_AdaFM'
 
     config['training']['out_dir'] = out_path + 'G_%d_D_%d/'%(-G_Layer_FIX, D_Layer_FIX)
     if not os.path.isdir(config['training']['out_dir']):
