@@ -402,16 +402,16 @@ class Generator(nn.Module):
         # self.resnet_5_0 = ResnetBlock(2*nf, 1*nf)
         # self.resnet_5_1 = ResnetBlock(1*nf, 1*nf)
 
-        self.resnet_3_0 = ResnetBlock_style(8 * nf, 4 * nf)
-        self.resnet_3_1 = ResnetBlock_style(4 * nf, 4 * nf)
+        self.resnet_3_0 = ResnetBlock_adafm(8 * nf, 4 * nf)
+        self.resnet_3_1 = ResnetBlock_adafm(4 * nf, 4 * nf)
 
         # self.small_Attn = Self_Attn(4 * nf)
 
-        self.resnet_4_0 = ResnetBlock_style(4 * nf, 2 * nf)
-        self.resnet_4_1 = ResnetBlock_style(2 * nf, 2 * nf)
+        self.resnet_4_0 = ResnetBlock_adafm(4 * nf, 2 * nf)
+        self.resnet_4_1 = ResnetBlock_adafm(2 * nf, 2 * nf)
 
-        self.resnet_5_0 = ResnetBlock_style(2 * nf, 1 * nf)
-        self.resnet_5_1 = ResnetBlock_style(1 * nf, 1 * nf)
+        self.resnet_5_0 = ResnetBlock_adafm(2 * nf, 1 * nf)
+        self.resnet_5_1 = ResnetBlock_adafm(1 * nf, 1 * nf)
 
         self.conv_img = nn.Conv2d(nf, 3, 3, padding=1)
 
@@ -668,7 +668,7 @@ class FusedUpsample(nn.Module):
         return out
 
 
-class ResnetBlock_style(nn.Module):
+class ResnetBlock_adafm(nn.Module):
     def __init__(self, fin, fout, fhidden=None, is_bias=True):
         super().__init__()
         # Attributes
@@ -684,12 +684,12 @@ class ResnetBlock_style(nn.Module):
         # Submodules
         self.lrelu_0 = nn.LeakyReLU(0.2)
         self.conv_0 = nn.Conv2d(self.fin, self.fhidden, 3, stride=1, padding=1)
-        self.small_style_adain_0 = AdaptiveInstanceNorm_1(self.fhidden, self.fin, style_dim)
+        self.small_adafm_0 = AdaFM(self.fhidden, self.fin, style_dim)
         # self.style_noise_0 = NoiseInjection(self.fhidden)
 
         self.lrelu_1 = nn.LeakyReLU(0.2)
         self.conv_1 = nn.Conv2d(self.fhidden, self.fout, 3, stride=1, padding=1, bias=is_bias)
-        self.small_style_adain_1 = AdaptiveInstanceNorm_1(self.fout, self.fhidden, style_dim)
+        self.small_adafm_1 = AdaFM(self.fout, self.fhidden, style_dim)
         # self.style_noise_1 = NoiseInjection(self.fhidden)
 
         if self.learned_shortcut:
@@ -699,12 +699,12 @@ class ResnetBlock_style(nn.Module):
         x_s = self._shortcut(x)
 
         dx = self.lrelu_0(x)
-        F_weight0 = self.small_style_adain_0(self.conv_0.weight, style)
+        F_weight0 = self.small_adafm_0(self.conv_0.weight, style)
         # dx = self.conv_0(dx)
         dx = F_conv(dx, F_weight0, bias=self.conv_0.bias, stride=1, padding=1)
 
         dx = self.lrelu_1(dx)
-        F_weight1 = self.small_style_adain_1(self.conv_1.weight, style)
+        F_weight1 = self.small_adafm_1(self.conv_1.weight, style)
         # dx = self.conv_1(dx)
         dx = F_conv(dx, F_weight1, bias=self.conv_1.bias, stride=1, padding=1)
 
@@ -720,7 +720,7 @@ class ResnetBlock_style(nn.Module):
         return x_s
 
 
-class AdaptiveInstanceNorm_1(nn.Module):
+class AdaFM(nn.Module):
     def __init__(self, in_channel, out_channel, style_dim=0):
         super().__init__()
 
