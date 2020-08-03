@@ -198,7 +198,7 @@ for choose in range(1):
                     param.requires_grad = True
                 else:
                     param.requires_grad = False
-                if name.find('small_style_adain_') >= 0:
+                if name.find('small_adafm_') >= 0:
                     param.requires_grad = False
             get_parameter_number(generator)
 
@@ -328,7 +328,7 @@ for choose in range(1):
 
             if method == 'AdaFM' and it == 10000:
                 for name, param in generator.named_parameters():
-                    if name.find('small_style_adain_') >= 0:
+                    if name.find('small_adafm_') >= 0:
                         param.requires_grad = True
                 get_parameter_number(generator)
 
