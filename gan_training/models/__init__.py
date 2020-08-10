@@ -1,6 +1,6 @@
 from gan_training.models import (
     resnet2,
-    resnet2_contral_kernel,
+    resnet2_AdaFM,
 )
 
 generator_dict = {
